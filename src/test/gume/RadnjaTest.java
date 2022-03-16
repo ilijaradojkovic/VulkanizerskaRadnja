@@ -5,16 +5,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import auto_radnja.Radnja;
 import auto_radnja.gume.AutoGuma;
 
 abstract class RadnjaTest {
 
-	public RadnjaTest(Radnja r) {
-		
-	}
-	Radnja r;
+	
+	protected Radnja r;
 	@BeforeEach
 	void setUp() throws Exception {
 		
@@ -37,7 +37,7 @@ abstract class RadnjaTest {
 		AutoGuma guma=new AutoGuma("Marka", 15, 200, 70);
 		r.dodajGumu(guma);
 		assertEquals(1, r.vratiSveGume().size());
-		AutoGuma guma1=new AutoGuma("Marka", 15, 200, 70);
+		AutoGuma guma1=new AutoGuma("Marka", 16, 201, 71);
 		r.dodajGumu(guma1);
 		assertEquals(2, r.vratiSveGume().size());
 		
@@ -48,6 +48,7 @@ abstract class RadnjaTest {
 	void testDodajGumu_Duplikat() {
 		AutoGuma guma=new AutoGuma("Marka", 15, 200, 70);
 		r.dodajGumu(guma);
+	
 	
 		assertThrows(RuntimeException.class, ()->r.dodajGumu(guma));
 	}
@@ -61,11 +62,32 @@ void testDodajGumu_Null() {
 }
 
 
+	
+	
 	@Test
-	void testPronadjiGumu() {
-		fail("Not yet implemented");
+	void testPronadjiGumu_MarkaModelNull() {
+		AutoGuma g=new AutoGuma();
+		assertNull(r.pronadjiGumu(g.getMarkaModel()));
 	}
+	
 
+	@Test
+	void testPronadjiGumu_NemaIsitih() {
+		AutoGuma guma=new AutoGuma("Marka", 15, 200, 70);
+		r.dodajGumu(guma);
+		AutoGuma guma1=new AutoGuma("Marka1", 16, 201, 71);
+		r.dodajGumu(guma1);
+		assertEquals(0, r.pronadjiGumu("feqr").size());
+	}
+	@Test
+	void testPronadjiGumu_Pronadjeno() {
+		AutoGuma guma=new AutoGuma("Marka", 15, 200, 70);
+		r.dodajGumu(guma);
+		AutoGuma guma1=new AutoGuma("Marka", 16, 201, 71);
+		r.dodajGumu(guma1);
+		assertEquals(2, r.pronadjiGumu("Marka").size());
+	}
+	
 	@Test
 	void testVratiSveGume() {
 		AutoGuma guma=new AutoGuma("Marka", 15, 200, 70);

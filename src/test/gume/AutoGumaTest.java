@@ -25,7 +25,19 @@ class AutoGumaTest {
 
 	@Test
 	void testAutoGuma() {
-		
+		AutoGuma g=new AutoGuma();
+		assertTrue(g.getMarkaModel()==null);
+		assertTrue(g.getPrecnik()==-1);
+		assertTrue(g.getSirina()==-1);
+		assertTrue(g.getVisina()==-1);
+	}
+	@Test
+	void testAutoGuma_SaParametrima() {
+		AutoGuma g=new AutoGuma("Marka1",15,200,70);
+		assertTrue(g.getMarkaModel().equals("Marka1"));
+		assertTrue(g.getPrecnik()==15);
+		assertTrue(g.getSirina()==200);
+		assertTrue(g.getVisina()==70);
 	}
 
 	
@@ -154,7 +166,7 @@ AutoGuma a1 = new AutoGuma("Marka",15,200,70);
 	@CsvSource({
 		
 		"Marka, 15, 200, 70, Marka, 15, 200, 70, true ",
-		"Marka, 15, 200, 70, Markaa, 15, 200, 70, false ",
+		"Marka, 15, 200, 70, Markaa, 15, 200, 70, true ",
 		"Marka, 17, 200, 70, Marka, 15, 200, 80, false ",
 		"Marka, 15, 201, 70, Marka, 15, 200, 80, false ",
 		"Marka, 15, 200, 70, Marka, 15, 200, 80, false ",
