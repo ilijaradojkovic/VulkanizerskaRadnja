@@ -86,6 +86,7 @@ void testDodajGumu_Null() {
 		AutoGuma guma1=new AutoGuma("Marka", 16, 201, 71);
 		r.dodajGumu(guma1);
 		assertEquals(2, r.pronadjiGumu("Marka").size());
+		
 	}
 	
 	@Test
