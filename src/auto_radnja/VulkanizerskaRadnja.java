@@ -5,8 +5,19 @@ import java.util.List;
 
 import auto_radnja.gume.AutoGuma;
 
+
+/**
+ * Predstavlja vulkanizersku radnju
+ * 
+ * @author ilijaradojkovic
+ * @version 1.0
+ *
+ */
 public class VulkanizerskaRadnja implements Radnja {
 
+	/**
+	 * Lista guma,inicijalizovala se na LinkedList
+	 */
 	private List<AutoGuma> gume = new LinkedList<AutoGuma>();
 	@Override
 	public void dodajGumu(AutoGuma a) {
