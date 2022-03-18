@@ -15,22 +15,26 @@ public interface Radnja {
 	/**
 	 * 
 	 * Dodaje AutoGumu u listu
-	 * @param a AutoGuma koja se dodaje 
-	 * @throws NullPointerException ako je Autoguma  null
-	 * @throws RuntimeException ako Autoguma vec postoji
+	 * 
+	 * @param a AutoGuma koja se dodaje
+	 * @throws NullPointerException ako je Autoguma null
+	 * @throws RuntimeException     ako Autoguma vec postoji
 	 */
 	void dodajGumu(AutoGuma a);
+
 	/**
-	 * Pretrazuje gume po marci 
+	 * Pretrazuje gume po marci
+	 * 
 	 * @param markaModel marka po kojoj se pretrazuje
 	 * @return listu guma
 	 *
 	 */
 	List<AutoGuma> pronadjiGumu(String markaModel);
-	
+
 	/**
+	 * vraca sve gume
 	 * 
-	 * @return vraca sve gume
+	 * @return lista svih guma 
 	 */
 	List<AutoGuma> vratiSveGume();
 }

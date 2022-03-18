@@ -9,19 +9,15 @@ import org.junit.jupiter.api.Test;
 import auto_radnja.Radnja;
 import auto_radnja.VulkanizerskaRadnja;
 
-class VulkanizerskaRadnjaTest  extends RadnjaTest{
-
-	
+class VulkanizerskaRadnjaTest extends RadnjaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		r=new VulkanizerskaRadnja();
+		r = new VulkanizerskaRadnja();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
-	
 
 }
