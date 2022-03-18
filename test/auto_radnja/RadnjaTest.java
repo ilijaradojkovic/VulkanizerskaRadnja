@@ -1,4 +1,4 @@
-package test.gume;
+package auto_radnja;
 
 import static org.junit.jupiter.api.Assertions.*;
 
