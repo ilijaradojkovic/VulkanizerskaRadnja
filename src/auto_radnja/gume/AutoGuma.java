@@ -125,7 +125,8 @@ public class AutoGuma {
 	/**
 	 * postavlja novu vrednost visine gume
 	 * 
-	 * @param visina nova visina gume * @throws IllegalArgumentException ako je
+	 * @param visina nova visina gume 
+	 * @throws IllegalArgumentException ako je
 	 *               visina van opsega (25,95)
 	 */
 	public void setVisina(int visina) {
