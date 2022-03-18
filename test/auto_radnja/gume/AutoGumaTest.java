@@ -166,7 +166,7 @@ AutoGuma a1 = new AutoGuma("Marka",15,200,70);
 	@CsvSource({
 		
 		"Marka, 15, 200, 70, Marka, 15, 200, 70, true ",
-		"Marka, 15, 200, 70, Markaa, 15, 200, 70, true ",
+		"Marka, 15, 200, 70, Markaa, 15, 200, 70, false ",
 		"Marka, 17, 200, 70, Marka, 15, 200, 80, false ",
 		"Marka, 15, 201, 70, Marka, 15, 200, 80, false ",
 		"Marka, 15, 200, 70, Marka, 15, 200, 80, false ",

@@ -137,7 +137,11 @@ public class AutoGuma {
 		if (obj == null)return false;
 		if (getClass() != obj.getClass())return false;
 		AutoGuma other = (AutoGuma) obj;
-		
+		if (markaModel == null)
+		{if (other.markaModel != null)
+			return false;
+		} else if (!markaModel.equals(other.markaModel))
+			return false;
 		if (precnik != other.precnik) return false;
 		if (sirina != other.sirina)return false;
 		if (visina != other.visina)return false;
